@@ -61,7 +61,11 @@ namespace tinyAlgebra
 		{
 			return Math.Sqrt((v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y));
 		}
-		// Vec2Lerp
+
+		public static Vector2 Vec2Lerp(Vector2 v1, Vector2 v2, float value)
+		{
+			return Vector2(v1.x + value * (v2.x - v1.x), v1.y + value * (v2.y - v1.y));
+		}
 
 		public static Vector2 Vec2Normalize(Vector2 v)
 		{
@@ -144,7 +148,6 @@ namespace tinyAlgebra
 			return Math.Sqrt((v1.x - v2.x) *(v1.x - v2.x) + (v1.y - v2.y) *(v1.y - v2.y) + (v1.z - v2.z) *(v1.z - v2.z));
 		}
 
-		// Need to check if correct
 		public static Vector3 Vec3Normalize(Vector3 v)
 		{
 			float length = Vec3Length(v);
@@ -160,10 +163,63 @@ namespace tinyAlgebra
 			return Vector3(x, y, z);
 		}
 
-		// TODO:
-		// Vec3QuaternionRotation
-		// Vec3Lerp
+		public static Vector3 Vec3QuaternionRotation(Vector3 v, Quaternion q)
+		{
+			return Vector3(
+				v.x * (q.x*q.x + q.w*q.w - q.y*q.y - q.z*q.z) + v.y * (2*q.x*q.y - 2*q.w*q.z) + v.z * (2*q.x*q.z + 2*q.w*q.y),
+				v.x * (2*q.w*q.z + 2*q.x*q.y) + v.y * (q.w*q.w - q.x*q.x + q.y*q.y - q.z*q.z) + v.z * (-2*q.w*q.x + 2*q.y*q.z),
+				v.x * (-2*q.w*q.y + 2*q.x*q.z) + v.y * (2*q.w*q.x + 2*q.y*q.z) + v.z * (q.w*q.w - q.x*q.x - q.y*q.y + q.z*q.z)
+			);
+		}	
 
+		public static Vector3 Vec3Lerp(Vector3 v1, Vector3 v2, float value)
+		{
+			return Vector3(
+				v1.x + value * (v2.x - v1.x),
+				v1.y + value * (v2.y - v1.y),
+				v1.z + value * (v2.z - v1.z)
+			);
+		}
+
+
+		//
+		// Vector4 Operations //
+		//
+
+		public static Vector4 Vec4AddValue(Vector4 v1, float value)
+		{
+			return Vector4(v1.x + value, v1.y + value, v1.z + value, v1.w + value);
+		}
+
+		public static Vector4 Vec4SubstractValue(Vector4 v1, float value)
+		{
+			return Vector4(v1.x - value, v1.y - value, v1.z - value, v1.w - value);
+		}
+
+		public static Vector4 Vec4Scale(Vector4 v1, float value)
+		{
+			return Vector4(v1.x * value, v1.y * value, v1.z * value, v1.w *  value);
+		}
+
+		public static Vector4 Vec4Add(Vector4 v1, Vector4 v2)
+		{
+			return Vector4(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z, v1.w + v2.w);
+		}
+
+		public static Vector4 Vec4Substract(Vector4 v1, Vector4 v2)
+		{
+			return Vector4(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z, v1.w - v2.w);
+		}
+
+		public static Vector4 Vec4Multiply(Vector4 v1, Vector4 v2)
+		{
+			return Vector4(v1.x * v2.x, v1.y * v2.y, v1.z * v2.z, v1.w * v2.w);
+		}
+
+		public static Vector4 Vec4Divide(Vector4 v1, Vector4 v2)
+		{
+			return Vector4(v1.x / v2.x, v1.y / v2.y, v1.z / v2.z, v1.w / v2.w);
+		}
 
 		public static float Vec4DotProduct(Vector4 v1, Vector4 v2)
 		{
@@ -173,6 +229,27 @@ namespace tinyAlgebra
 		public static float Vec4DotProduct(float v1x, float v1y, float v1z, float v1w, float v2x, float v2y, float v2z, float v2w)
 		{
 			return v1x * v2x + v1y * v2y + v1z * v2z + v1w * v2w;
+		}
+
+		public static float Vec4Length(Vector4 v)
+		{
+			return Math.Sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z) + (v.w * v.w));
+		}
+
+		public static Vector4 Vec4Normalize(Vector4 v)
+		{
+			float length = Vec4Length(v);
+			return Vector4(v.x / length, v.y / length, v.z / length, v.w / length);
+		}
+
+		public static Vector4 Vec4Lerp(Vector4 v1, Vector4 v2, float value)
+		{
+			return Vector4(
+				v1.x + value * (v2.x - v1.x),
+				v1.y + value * (v2.y - v1.y),
+				v1.z + value * (v2.w - v1.z),
+				v1.w + value * (v2.z - v1.w)
+			);
 		}
 
 		//
@@ -246,9 +323,32 @@ namespace tinyAlgebra
 
 			return r;
 		}
-		// Mat4Normalize
-		// Mat4Transpose
+
+		public static Mat4 Mat4Normalize(Mat4 m)
+		{
+			float det = Mat4Determinant(m);
+
+			Vector4 col1 = Vector4(m.cols[0].x / det, m.cols[0].y / det, m.cols[0].z / det, m.cols[0].w / det);
+			Vector4 col2 = Vector4(m.cols[1].x / det, m.cols[1].y / det, m.cols[1].z / det, m.cols[1].w / det);
+			Vector4 col3 = Vector4(m.cols[2].x / det, m.cols[2].y / det, m.cols[2].z / det, m.cols[2].w / det);
+			Vector4 col4 = Vector4(m.cols[3].x / det, m.cols[3].y / det, m.cols[3].z / det, m.cols[3].w / det);
+
+			return Mat4(col1, col2, col3, col4);
+		}
+
+		public static Mat4 Mat4Transpose(Mat4 m)
+		{
+			Vector4 col1 = Vector4(m.cols[0].x, m.cols[1].x, m.cols[2].x, m.cols[3].x);
+			Vector4 col2 = Vector4(m.cols[0].y, m.cols[1].y, m.cols[2].y, m.cols[3].y);
+			Vector4 col3 = Vector4(m.cols[0].z, m.cols[1].z, m.cols[2].z, m.cols[3].z);
+			Vector4 col4 = Vector4(m.cols[0].w, m.cols[1].w, m.cols[2].w, m.cols[3].w);
+
+			return Mat4(col1, col2, col3, col4);
+		}
+
+		// TODO
 		// mat4Invert
+
 		public static Mat4 Mat4Translate(float x, float y, float z)
 		{
 			Vector4 col1 = Vector4(1.0f, 0.0f, 0.0f, 0.0f);
@@ -281,7 +381,8 @@ namespace tinyAlgebra
 
 		// TODO:
 		// Custom axis
-		// Maybe xyz rotation?
+		// xyz rotation
+
 		public static Mat4 Mat4RotateX(float angle)
 		{
 			Mat4 m = Mat4.Identity();
@@ -405,19 +506,26 @@ namespace tinyAlgebra
 			return Mat4(col1, col2, col3, col4);
 		}
 
-		//Projection matrices operation
-
-		public static Mat4 Mat4PProjection(float fov, float height, float width, float near, float far)
+		public static Mat4 Mat4Perspective(float fov, float height, float width, float near, float far)
 		{
 			Mat4 m = Mat4.Zero();
 			float aspect = height / width;
-			float fovRad = 1.0f / Math.Tan(fov * 0.5f / 180.0f * 3.14159f); 
+			float fovRad = 1.0f / Math.Tan(fov * 0.5f / 180.0f * 3.14159f);
+ 			float top = near * Math.Tan(fovRad * 0.5f);
+			float bottom = -top;
+			float right = top * aspect;
+			float left = -right;
 
-			m.cols[0].x = aspect * fovRad;
- 			m.cols[1].y = fovRad;
-			m.cols[2].z = far / (far - near);
-			m.cols[2].w = 1.0f;
-			m.cols[3].z = (-far * near) / (far - near);
+			m.cols[0].x = (near  * 2.0f) / (right - left);
+
+ 			m.cols[1].y = (near  * 2.0f) / (top - bottom);
+
+			m.cols[2].x = (right + left) / (right - left);
+			m.cols[2].y = (right + left) / (right - left);
+			m.cols[2].z = (top   + bottom) / (top   - bottom);
+			m.cols[2].w = -1.0f;
+
+			m.cols[3].z = -((2.0f * far * near) / (far - near));
 
 			return m;
 		}
@@ -425,6 +533,38 @@ namespace tinyAlgebra
 		//
 		// Quaternions Operation //
 		//
+
+		public static Quaternion QuaternionMultiply(Quaternion q1, Quaternion q2)
+		{
+			float q1x = q1.x, q1y = q1.y, q1z = q1.z, q1w = q1.w;
+			float q2x = q2.x, q2y = q2.y, q2z = q2.z, q2w = q2.w;
+
+			float rx = q1x * q2w + q1w * q2x + q1y * q2z - q1z * q2y;
+			float ry = q1y * q2w + q1w * q2y + q1z * q2x - q1x * q2z;
+			float rz = q1z * q2w + q1w * q2z + q1x * q2y - q1y * q2x;
+			float rw = q1w * q2w - q1x * q2x - q1y * q2y - q1z * q2z;
+
+			return Quaternion(rx, ry, rz, rw);
+		}
+
+		// Maybe add some kind of error checking
+		public static Quaternion QuaternionInvert(Quaternion q)
+		{
+			float length = Vec4Length(q);
+			float lengthSq = length * length;
+
+			if (lengthSq != 0.0f)
+			{
+				float i = 1.0f / lengthSq;
+				return Quaternion(q.x * -i, q.y * -i, q.z * -i, q.w * -i);
+			}
+			else
+			{
+				return q;
+			}
+		}
+
+		// Quaternions conversions
 		
 	}
 }

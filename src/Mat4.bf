@@ -24,6 +24,48 @@ namespace tinyAlgebra
 			this.cols[3] = value;
 		}
 
+		[Inline]
+		public float Determinant()
+		{
+			return tA.Mat4Determinant(this);
+		}
+
+		[Inline]
+		public float Trace()
+		{
+			return tA.Mat4Trace(this);
+		}
+
+		[Inline]
+		public Mat4 Add(Mat4 m2)
+		{
+			return tA.Mat4Add(this, m2);
+		}
+
+		[Inline]
+		public Mat4 Substract(Mat4 m2)
+		{
+			return tA.Mat4Substract(this, m2);
+		}
+
+		[Inline]
+		public Mat4 Multiply(Mat4 m2)
+		{
+			return tA.Mat4Multiply(this, m2);
+		}
+
+		[Inline]
+		public Mat4 Normalize()
+		{
+			return tA.Mat4Normalize(this);
+		}
+
+		[Inline]
+		public Mat4 Transpose()
+		{
+			return tA.Mat4Transpose(this);
+		}
+
 		public static Mat4 Zero()
 		{
 			return Mat4(Vector4(0));

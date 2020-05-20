@@ -1,141 +1,167 @@
 FileVersion = 1
 LastConfig = "Debug"
 LastPlatform = "Win64"
-RecentFilesList = ["f:\\Projects\\tinyAlgebra\\src\\tA.bf", "f:\\Projects\\tinyAlgebra\\src\\Mat4.bf", "f:\\Projects\\tinyAlgebra\\src\\Vector4.bf", "f:\\Projects\\tinyAlgebra\\src\\Vector2.bf", "f:\\Projects\\tinyAlgebra\\src\\Vector3.bf"]
+RecentFilesList = ["f:\\GitRepos\\tinyAlgebra\\src\\Vector3.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Vector2.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Vector4.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Mat4.bf", "f:\\GitRepos\\tinyAlgebra\\src\\tA.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Quaternion.bf"]
 
 [MainWindow]
-X = -2475
-Y = 13
+X = 64
+Y = 6
 Width = 1200
 Height = 1024
 ShowKind = "Maximized"
 
 [MainDockingFrame]
 Type = "DockingFrame"
-SplitType = 2
+SplitType = 1
 
 [[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 250.0
+RequestedHeight = 248.0
+SizePriority = 0.5007818
+Type = "DockingFrame"
+SplitType = 2
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
 RequestedWidth = 350.0
-RequestedHeight = 200.0
-SizePriority = 200.0
+RequestedHeight = 1077.0
+SizePriority = 1077.0
 Type = "DockingFrame"
 SplitType = 1
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
-RequestedWidth = 330.0
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
+RequestedWidth = 278.0
 RequestedHeight = 200.0
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Workspace"
 TabWidth = 112.0
 Type = "ProjectPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
 IsFillWidget = true
 Permanent = true
-RequestedWidth = 150.0
+RequestedWidth = 2277.0
 RequestedHeight = 150.0
-SizePriority = 150.0
+SizePriority = 0.5146341
 DefaultDocumentsTabbedView = true
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
-TabLabel = "tA.bf"
-TabWidth = 66.0
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Quaternion.bf"
+TabWidth = 108.0
 Type = "SourceViewPanel"
-FilePath = "f:\\Projects\\tinyAlgebra\\src\\tA.bf"
-CursorPos = 505
+FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\Quaternion.bf"
+CursorPos = 387
 ProjectName = "tinyAlgebra"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Mat4.bf"
 TabWidth = 72.66666
 Type = "SourceViewPanel"
-FilePath = "f:\\Projects\\tinyAlgebra\\src\\Mat4.bf"
-CursorPos = 324
+FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\Mat4.bf"
+CursorPos = 994
+VertPos = 2089.891
 ProjectName = "tinyAlgebra"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Vector4.bf"
 TabWidth = 86.66666
 Type = "SourceViewPanel"
-FilePath = "f:\\Projects\\tinyAlgebra\\src\\Vector4.bf"
-CursorPos = 406
+FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\Vector4.bf"
+CursorPos = 1457
 ProjectName = "tinyAlgebra"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "Vector3.bf"
-TabWidth = 86.66666
-Type = "SourceViewPanel"
-FilePath = "f:\\Projects\\tinyAlgebra\\src\\Vector3.bf"
-CursorPos = 452
-ProjectName = "tinyAlgebra"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Vector2.bf"
 TabWidth = 86.66666
 Type = "SourceViewPanel"
-FilePath = "f:\\Projects\\tinyAlgebra\\src\\Vector2.bf"
-CursorPos = 222
+FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\Vector2.bf"
+VertPos = 4222.575
 ProjectName = "tinyAlgebra"
 
-[[MainDockingFrame.DockedWidgets]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Vector3.bf"
+TabWidth = 96.66666
+Type = "SourceViewPanel"
+FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\Vector3.bf"
+CursorPos = 2737
+VertPos = 198.9412
+ProjectName = "tinyAlgebra"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
+IsFillWidget = true
+RequestedWidth = 2277.0
+RequestedHeight = 1077.0
+SizePriority = 0.4853659
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "tA.bf"
+TabWidth = 56.0
+Type = "SourceViewPanel"
+FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\tA.bf"
+CursorPos = 96
+VertPos = 16632.79
+ProjectName = "tinyAlgebra"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
 RequestedWidth = 250.0
-RequestedHeight = 48.0
+RequestedHeight = 221.0
 Type = "DockingFrame"
 SplitType = 1
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
 RequestedWidth = 250.0
 RequestedHeight = 250.0
 SizePriority = 0.4700162
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Memory"
 TabWidth = 97.33334
 Type = "MemoryPanel"
 AutoResize = "Auto_Mul8"
 RequestedWidth = 300.0
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Watch"
 TabWidth = 85.33334
 Type = "WatchPanel"
-Columns = [{Width = 200.0}, {Width = 200.0}, {Width = 200.0}]
+Columns = [{Width = 240.0}, {Width = 240.0}, {Width = 240.0}]
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Auto"
 TabWidth = 76.66666
 Type = "AutoWatchPanel"
-Columns = [{Width = 200.0}, {Width = 200.0}, {Width = 200.0}]
+Columns = [{Width = 240.0}, {Width = 240.0}, {Width = 240.0}]
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
 RequestedWidth = 250.0
 RequestedHeight = 250.0
 SizePriority = 0.5299838
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Threads"
 TabWidth = 94.66666
 Type = "ThreadPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Call Stack"
 TabWidth = 104.0
 Type = "CallStackPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Immediate"
 TabWidth = 109.3333
 Type = "ImmediatePanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Output"
 TabWidth = 89.33334
