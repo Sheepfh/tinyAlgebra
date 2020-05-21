@@ -24,6 +24,18 @@ namespace tinyAlgebra
 			this.cols[3] = value;
 		}
 
+		public Vector4 this[int index]
+		{
+			get { return cols[index]; }
+			set mut { cols[index] = value; }
+		}
+
+		public float this[int column, int index]
+		{
+			get { return cols[column][index]; }
+			set mut { cols[column][index] = value; }
+		}
+
 		[Inline]
 		public static Mat4 operator+(Mat4 lv, Mat4 rv)
 		{

@@ -18,6 +18,12 @@ namespace tinyAlgebra
 			this.y = value;
 		}
 
+		public float this[int index]
+		{
+			get { return index == 1 ? y : x; }
+			set mut { if (index == 1) y = value; else x = value; }
+		}
+
 		[Inline]
 		public static Vector2 operator+(Vector2 lv, Vector2 rv)
 		{

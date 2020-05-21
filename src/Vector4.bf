@@ -25,6 +25,30 @@ namespace tinyAlgebra
 			this.w = value;
 		}
 
+		public float this[int index]
+		{
+			get
+			{
+				switch (index)
+				{
+				case 1:  return y;
+				case 2:  return z;
+				case 3:  return w;
+				default: return x;
+				}
+			}
+			set mut
+			{
+				switch (index)
+				{
+				case 1:  y = value;
+				case 2:  z = value;
+				case 3:  w = value;
+				default: x = value;
+				}
+			}
+		}
+
 		[Inline]
 		public static Vector4 operator+(Vector4 lv, Vector4 rv)
 		{

@@ -21,6 +21,28 @@ struct Vector3
 			this.z = value;
 		}
 
+		public float this[int index]
+		{
+			get
+			{
+				switch (index)
+				{
+				case 1:  return y;
+				case 2:  return z;
+				default: return x;
+				}
+			}
+			set mut
+			{
+				switch (index)
+				{
+				case 1:  y = value;
+				case 2:  z = value;
+				default: x = value;
+				}
+			}
+		}
+
 		[Inline]
 		public static Vector3 operator+(Vector3 rv, Vector3 lv)
 		{
