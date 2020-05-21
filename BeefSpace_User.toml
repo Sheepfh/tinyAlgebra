@@ -1,11 +1,11 @@
 FileVersion = 1
 LastConfig = "Debug"
 LastPlatform = "Win64"
-RecentFilesList = ["f:\\GitRepos\\tinyAlgebra\\src\\Vector3.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Vector2.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Vector4.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Mat4.bf", "f:\\GitRepos\\tinyAlgebra\\src\\tA.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Quaternion.bf"]
+RecentFilesList = ["f:\\GitRepos\\tinyAlgebra\\src\\tA.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Vector3.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Vector2.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Vector4.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Mat4.bf", "f:\\GitRepos\\tinyAlgebra\\src\\Quaternion.bf"]
 
 [MainWindow]
-X = 64
-Y = 6
+X = -2439
+Y = 134
 Width = 1200
 Height = 1024
 ShowKind = "Maximized"
@@ -44,7 +44,7 @@ IsFillWidget = true
 Permanent = true
 RequestedWidth = 2277.0
 RequestedHeight = 150.0
-SizePriority = 0.5146341
+SizePriority = 0.5280702
 DefaultDocumentsTabbedView = true
 Type = "TabbedView"
 
@@ -62,7 +62,6 @@ TabWidth = 72.66666
 Type = "SourceViewPanel"
 FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\Mat4.bf"
 CursorPos = 994
-VertPos = 2089.891
 ProjectName = "tinyAlgebra"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
@@ -78,25 +77,16 @@ TabLabel = "Vector2.bf"
 TabWidth = 86.66666
 Type = "SourceViewPanel"
 FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\Vector2.bf"
-VertPos = 4222.575
 ProjectName = "tinyAlgebra"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
 TabLabel = "Vector3.bf"
-TabWidth = 96.66666
+TabWidth = 86.66666
 Type = "SourceViewPanel"
 FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\Vector3.bf"
 CursorPos = 2737
-VertPos = 198.9412
+VertPos = 3700.586
 ProjectName = "tinyAlgebra"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
-IsFillWidget = true
-RequestedWidth = 2277.0
-RequestedHeight = 1077.0
-SizePriority = 0.4853659
-Type = "TabbedView"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
@@ -104,8 +94,8 @@ TabLabel = "tA.bf"
 TabWidth = 56.0
 Type = "SourceViewPanel"
 FilePath = "f:\\GitRepos\\tinyAlgebra\\src\\tA.bf"
-CursorPos = 96
-VertPos = 16632.79
+CursorPos = 11375
+VertPos = 10843.0
 ProjectName = "tinyAlgebra"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]

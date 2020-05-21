@@ -2,4 +2,5 @@ FileVersion = 1
 
 [Project]
 Name = "tinyAlgebra"
+TargetType = "BeefLib"
 StartupObject = "tinyAlgebra.Program"

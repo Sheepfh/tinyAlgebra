@@ -391,9 +391,9 @@ namespace tinyAlgebra
  			float sinT = Math.Sin(angle);
 
 			m.cols[1].y = cosT;
-			m.cols[1].z = sinT;
-			m.cols[2].y = -sinT;
-			m.cols[2].z = cosT;
+			m.cols[1].z = -sinT;
+			m.cols[2].y = sinT;
+			m.cols[2].z = -cosT;
 
 			return m;
 		}
@@ -406,8 +406,8 @@ namespace tinyAlgebra
 			float sinT = Math.Sin(angle);
 
 			m.cols[0].x = cosT;
-			m.cols[0].z = -sinT;
-			m.cols[2].x = sinT;
+			m.cols[0].z = sinT;
+			m.cols[2].x = -sinT;
 			m.cols[2].z = cosT;
 
 			return m;
@@ -421,8 +421,8 @@ namespace tinyAlgebra
 			float sinT = Math.Sin(angle);
 
 			m.cols[0].x = cosT;
-			m.cols[0].y = sinT;
-			m.cols[1].x = -sinT;
+			m.cols[0].y = -sinT;
+			m.cols[1].x = sinT;
 			m.cols[1].y = cosT;
 
 			return m;
@@ -430,6 +430,36 @@ namespace tinyAlgebra
 
 		public static Mat4 Mat4Multiply(Mat4 m1, Mat4 m2)
 		{
+			
+
+			Vector4 col1 = Vector4(
+				(m1.cols[0].x * m2.cols[0].x) + (m1.cols[0].y * m2.cols[1].x) + (m1.cols[0].z * m2.cols[2].x) + (m1.cols[0].w * m2.cols[3].x),
+				(m1.cols[0].x * m2.cols[0].y) + (m1.cols[0].y * m2.cols[1].y) + (m1.cols[0].z * m2.cols[2].y) + (m1.cols[0].w * m2.cols[3].y),
+				(m1.cols[0].x * m2.cols[0].z) + (m1.cols[0].y * m2.cols[1].z) + (m1.cols[0].z * m2.cols[2].z) + (m1.cols[0].w * m2.cols[3].z),
+				(m1.cols[0].x * m2.cols[0].w) + (m1.cols[0].y * m2.cols[1].w) + (m1.cols[0].z * m2.cols[2].w) + (m1.cols[0].w * m2.cols[3].w)
+			);
+
+			Vector4 col2 = Vector4(
+				(m1.cols[1].x * m2.cols[0].x) + (m1.cols[1].y * m2.cols[1].x) + (m1.cols[1].z * m2.cols[2].x) + (m1.cols[1].w * m2.cols[3].x),
+				(m1.cols[1].x * m2.cols[0].y) + (m1.cols[1].y * m2.cols[1].y) + (m1.cols[1].z * m2.cols[2].y) + (m1.cols[1].w * m2.cols[3].y),
+				(m1.cols[1].x * m2.cols[0].z) + (m1.cols[1].y * m2.cols[1].z) + (m1.cols[1].z * m2.cols[2].z) + (m1.cols[1].w * m2.cols[3].z),
+				(m1.cols[1].x * m2.cols[0].w) + (m1.cols[1].y * m2.cols[1].w) + (m1.cols[1].z * m2.cols[2].w) + (m1.cols[1].w * m2.cols[3].w)
+			);
+
+			Vector4 col3 = Vector4(
+				(m1.cols[2].x * m2.cols[0].x) + (m1.cols[2].y * m2.cols[1].x) + (m1.cols[2].z * m2.cols[2].x) + (m1.cols[2].w * m2.cols[3].x),
+				(m1.cols[2].x * m2.cols[0].y) + (m1.cols[2].y * m2.cols[1].y) + (m1.cols[2].z * m2.cols[2].y) + (m1.cols[2].w * m2.cols[3].y),
+				(m1.cols[2].x * m2.cols[0].z) + (m1.cols[2].y * m2.cols[1].z) + (m1.cols[2].z * m2.cols[2].z) + (m1.cols[2].w * m2.cols[3].z),
+				(m1.cols[2].x * m2.cols[0].w) + (m1.cols[2].y * m2.cols[1].w) + (m1.cols[2].z * m2.cols[2].w) + (m1.cols[2].w * m2.cols[3].w)
+			);
+
+			Vector4 col4 = Vector4(
+				(m1.cols[3].x * m2.cols[0].x) + (m1.cols[3].y * m2.cols[1].x) + (m1.cols[3].z * m2.cols[2].x) + (m1.cols[3].w * m2.cols[3].x),
+				(m1.cols[3].x * m2.cols[0].y) + (m1.cols[3].y * m2.cols[1].y) + (m1.cols[3].z * m2.cols[2].y) + (m1.cols[3].w * m2.cols[3].y),
+				(m1.cols[3].x * m2.cols[0].z) + (m1.cols[3].y * m2.cols[1].z) + (m1.cols[3].z * m2.cols[2].z) + (m1.cols[3].w * m2.cols[3].z),
+				(m1.cols[3].x * m2.cols[0].w) + (m1.cols[3].y * m2.cols[1].w) + (m1.cols[3].z * m2.cols[2].w) + (m1.cols[3].w * m2.cols[3].w)
+			);
+			/*
 			Vector4 col1 = Vector4.Zero();
 			Vector4 col2 = Vector4.Zero();
 			Vector4 col3 = Vector4.Zero();
@@ -501,7 +531,7 @@ namespace tinyAlgebra
 			col4.w = Vec4DotProduct(
 				m1.cols[0].w, m1.cols[1].w, m1.cols[2].w, m1.cols[3].w,
 				m2.cols[3].x, m2.cols[3].y, m2.cols[3].z, m2.cols[3].w
-			);
+			);*/
 
 			return Mat4(col1, col2, col3, col4);
 		}

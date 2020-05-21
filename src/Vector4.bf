@@ -26,6 +26,48 @@ namespace tinyAlgebra
 		}
 
 		[Inline]
+		public static Vector4 operator+(Vector4 lv, Vector4 rv)
+		{
+			return tA.Vec4Add(lv, rv);
+		}
+
+		[Inline]
+		public static Vector4 operator+(Vector4 lv, float rv)
+		{
+			return tA.Vec4AddValue(lv, rv);
+		}
+
+		[Inline]
+		public static Vector4 operator-(Vector4 lv, Vector4 rv)
+		{
+			return tA.Vec4Substract(lv, rv);
+		}
+
+		[Inline]
+		public static Vector4 operator-(Vector4 lv, float rv)
+		{
+			return tA.Vec4SubstractValue(lv, rv);
+		}
+
+		[Inline]
+		public static Vector4 operator*(Vector4 lv, Vector4 rv)
+		{
+			return tA.Vec4Multiply(lv, rv);
+		}
+
+		[Inline]
+		public static Vector4 operator*(Vector4 lv, float rv)
+		{
+			return tA.Vec4Scale(lv, rv);
+		}
+
+		[Inline]
+		public static Vector4 operator/(Vector4 lv, Vector4 rv)
+		{
+			return tA.Vec4Divide(lv, rv);
+		}
+
+		[Inline]
 		public Vector4 AddValue(float value)
 		{
 			return tA.Vec4AddValue(this, value);

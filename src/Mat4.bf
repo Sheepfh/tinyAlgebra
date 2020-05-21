@@ -25,6 +25,24 @@ namespace tinyAlgebra
 		}
 
 		[Inline]
+		public static Mat4 operator+(Mat4 lv, Mat4 rv)
+		{
+			return tA.Mat4Add(lv, rv);
+		}
+
+		[Inline]
+		public static Mat4 operator-(Mat4 lv, Mat4 rv)
+		{
+			return tA.Mat4Substract(lv, rv);
+		}
+
+		[Inline]
+		public static Mat4 operator*(Mat4 lv, Mat4 rv)
+		{
+			return tA.Mat4Multiply(lv, rv);
+		}
+
+		[Inline]
 		public float Determinant()
 		{
 			return tA.Mat4Determinant(this);
