@@ -39,61 +39,61 @@ namespace tinyAlgebra
 		[Inline]
 		public static Mat4d operator+(Mat4d lv, Mat4d rv)
 		{
-			return tA.Mat4dAdd(lv, rv);
+			return tA.Mat4Add(lv, rv);
 		}
 
 		[Inline]
 		public static Mat4d operator-(Mat4d lv, Mat4d rv)
 		{
-			return tA.Mat4dSubstract(lv, rv);
+			return tA.Mat4Substract(lv, rv);
 		}
 
 		[Inline]
 		public static Mat4d operator*(Mat4d lv, Mat4d rv)
 		{
-			return tA.Mat4dMultiply(lv, rv);
+			return tA.Mat4Multiply(lv, rv);
 		}
 
 		[Inline]
 		public double Determinant()
 		{
-			return tA.Mat4dDeterminant(this);
+			return tA.Mat4Determinant(this);
 		}
 
 		[Inline]
 		public double Trace()
 		{
-			return tA.Mat4dTrace(this);
+			return tA.Mat4Trace(this);
 		}
 
 		[Inline]
 		public Mat4d Add(Mat4d m2)
 		{
-			return tA.Mat4dAdd(this, m2);
+			return tA.Mat4Add(this, m2);
 		}
 
 		[Inline]
 		public Mat4d Substract(Mat4d m2)
 		{
-			return tA.Mat4dSubstract(this, m2);
+			return tA.Mat4Substract(this, m2);
 		}
 
 		[Inline]
 		public Mat4d Multiply(Mat4d m2)
 		{
-			return tA.Mat4dMultiply(this, m2);
+			return tA.Mat4Multiply(this, m2);
 		}
 
 		[Inline]
 		public Mat4d Normalize()
 		{
-			return tA.Mat4dNormalize(this);
+			return tA.Mat4Normalize(this);
 		}
 
 		[Inline]
 		public Mat4d Transpose()
 		{
-			return tA.Mat4dTranspose(this);
+			return tA.Mat4Transpose(this);
 		}
 
 		public static Mat4d Zero()
