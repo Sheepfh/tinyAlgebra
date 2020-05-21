@@ -2,156 +2,156 @@ using System;
 
 namespace tinyAlgebra
 {
-	struct Vector2
+	struct Vector2d
 	{
-		public float x;
-		public float y;
+		public double x;
+		public double y;
 
-		public this(float x, float y)
+		public this(double x, double y)
 		{
 			this.x = x;
 			this.y = y;
 		}
-		public this(float value)
+		public this(double value)
 		{
 			this.x = value;
 			this.y = value;
 		}
 
-		public float this[int index]
+		public double this[int index]
 		{
 			get { return index == 1 ? y : x; }
 			set mut { if (index == 1) y = value; else x = value; }
 		}
 
 		[Inline]
-		public static Vector2 operator+(Vector2 lv, Vector2 rv)
+		public static Vector2d operator+(Vector2d lv, Vector2d rv)
 		{
 			return tA.Vec2Add(lv, rv);
 		}
 
 		[Inline]
-		public static Vector2 operator+(Vector2 lv, float rv)
+		public static Vector2d operator+(Vector2d lv, double rv)
 		{
 			return tA.Vec2AddValue(lv, rv);
 		}
 
 		[Inline]
-		public static Vector2 operator-(Vector2 lv, Vector2 rv)
+		public static Vector2d operator-(Vector2d lv, Vector2d rv)
 		{
 			return tA.Vec2Substract(lv, rv);
 		}
 
 		[Inline]
-		public static Vector2 operator-(Vector2 lv, float rv)
+		public static Vector2d operator-(Vector2d lv, double rv)
 		{
 			return tA.Vec2SubstractValue(lv, rv);
 		}
 
 		[Inline]
-		public static Vector2 operator*(Vector2 lv, Vector2 rv)
+		public static Vector2d operator*(Vector2d lv, Vector2d rv)
 		{
 			return tA.Vec2Multiply(lv, rv);
 		}
 
 		[Inline]
-		public static Vector2 operator*(Vector2 lv, float rv)
+		public static Vector2d operator*(Vector2d lv, double rv)
 		{
 			return tA.Vec2Scale(lv, rv);
 		}
 
 		[Inline]
-		public static Vector2 operator/(Vector2 lv, Vector2 rv)
+		public static Vector2d operator/(Vector2d lv, Vector2d rv)
 		{
 			return tA.Vec2Divide(lv, rv);
 		}
 
 		[Inline]
-		public Vector2 AddValue(float value)
+		public Vector2d AddValue(double value)
 		{
 			return tA.Vec2AddValue(this, value);
 		}
 
 		[Inline]
-		public Vector2 SubstractValue(float value)
+		public Vector2d SubstractValue(double value)
 		{
 			return tA.Vec2SubstractValue(this, value);
 		}
 
 		[Inline]
-		public Vector2 Scale(float value)
+		public Vector2d Scale(double value)
 		{
 			return tA.Vec2Scale(this, value);
 		}
 
 		[Inline]
-		public Vector2 Add(Vector2 v2)
+		public Vector2d Add(Vector2d v2)
 		{
 			return tA.Vec2Add(this, v2);
 		}
 
 		[Inline]
-		public Vector2 Substract(Vector2 v2)
+		public Vector2d Substract(Vector2d v2)
 		{
 			return tA.Vec2Substract(this, v2);
 		}
 
 		[Inline]
-		public Vector2 Multiply(Vector2 v2)
+		public Vector2d Multiply(Vector2d v2)
 		{
 			return tA.Vec2Multiply(this, v2);
 		}
 
 		[Inline]
-		public Vector2 Divide(Vector2 v2)
+		public Vector2d Divide(Vector2d v2)
 		{
 			return tA.Vec2Divide(this, v2);
 		}
 
 		[Inline]
-		public float DotProduct(Vector2 v2)
+		public double DotProduct(Vector2d v2)
 		{
 			return tA.Vec2DotProduct(this, v2);
 		}
 
 		[Inline]
-		public float Length()
+		public double Length()
 		{
 			return tA.Vec2Length(this);
 		}
 
 		[Inline]
-		public float LengthSquare()
+		public double LengthSquare()
 		{
 			return tA.Vec2LengthSquare(this);
 		}
 
 		[Inline]
-		public float Distance(Vector2 v2)
+		public double Distance(Vector2d v2)
 		{
 			return tA.Vec2Distance(this, v2);
 		}
 
 		[Inline]
-		public Vector2 Lerp(Vector2 v2, float value)
+		public Vector2d Lerp(Vector2d v2, double value)
 		{
 			return tA.Vec2Lerp(this, v2, value);
 		}
 
 		[Inline]
-		public Vector2 Normalize()
+		public Vector2d Normalize()
 		{
 			return tA.Vec2Normalize(this);
 		}
 
-		public static Vector2 Zero()
+		public static Vector2d Zero()
 		{
-			return Vector2(0);
+			return Vector2d(0);
 		}
 
-		public static Vector2 One()
+		public static Vector2d One()
 		{
-			return Vector2(1);
+			return Vector2d(1);
 		}
 	}
 }

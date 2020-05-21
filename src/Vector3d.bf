@@ -2,26 +2,26 @@ using System;
 
 namespace tinyAlgebra
 {
-struct Vector3
+	struct Vector3d
 	{
-		public float x;
-		public float y;
-		public float z;
+		public double x;
+		public double y;
+		public double z;
 
-		public this(float x, float y, float z)
+		public this(double x, double y, double z)
 		{
 			this.x = x;
 			this.y = y;
 			this.z = z;
 		}
-		public this(float value)
+		public this(double value)
 		{
 			this.x = value;
 			this.y = value;
 			this.z = value;
 		}
 
-		public float this[int index]
+		public double this[int index]
 		{
 			get
 			{
@@ -44,157 +44,157 @@ struct Vector3
 		}
 
 		[Inline]
-		public static Vector3 operator+(Vector3 rv, Vector3 lv)
+		public static Vector3d operator+(Vector3d rv, Vector3d lv)
 		{
 			return tA.Vec3Add(rv, lv);
 		}
 
 		[Inline]
-		public static Vector3 operator+(Vector3 rv, float lv)
+		public static Vector3d operator+(Vector3d rv, double lv)
 		{
 			return tA.Vec3AddValue(rv, lv);
 		}
 
 		[Inline]
-		public static Vector3 operator-(Vector3 rv, Vector3 lv)
+		public static Vector3d operator-(Vector3d rv, Vector3d lv)
 		{
 			return tA.Vec3Substract(rv, lv);
 		}
 
 		[Inline]
-		public static Vector3 operator-(Vector3 rv, float lv)
+		public static Vector3d operator-(Vector3d rv, double lv)
 		{
 			return tA.Vec3SubstractValue(rv, lv);
 		}
 
 		[Inline]
-		public static Vector3 operator*(Vector3 rv, Vector3 lv)
+		public static Vector3d operator*(Vector3d rv, Vector3d lv)
 		{
 			return tA.Vec3Multiply(rv, lv);
 		}
 
 		[Inline]
-		public static Vector3 operator*(Vector3 rv, float lv)
+		public static Vector3d operator*(Vector3d rv, double lv)
 		{
 			return tA.Vec3Scale(rv, lv);
 		}
 
 		[Inline]
-		public static Vector3 operator/(Vector3 rv, Vector3 lv)
+		public static Vector3d operator/(Vector3d rv, Vector3d lv)
 		{
 			return tA.Vec3Divide(rv, lv);
 		}
 
 		[Inline]
-		public Vector3 AddValue(float value)
+		public Vector3d AddValue(double value)
 		{
 			return tA.Vec3AddValue(this, value);
 		}
 
 		[Inline]
-		public Vector3 SubstractValue(float value)
+		public Vector3d SubstractValue(double value)
 		{
 			return tA.Vec3SubstractValue(this, value);
 		}
 
 		[Inline]
-		public Vector3 Scale(float value)
+		public Vector3d Scale(double value)
 		{
 			return tA.Vec3Scale(this, value);
 		}
 
 		[Inline]
-		public Vector3 Negate()
+		public Vector3d Negate()
 		{
 			return tA.Vec3Negate(this);
 		}
 
 		[Inline]
-		public Vector3 Add(Vector3 v2)
+		public Vector3d Add(Vector3d v2)
 		{
 			return tA.Vec3Add(this, v2);
 		}
 
 		[Inline]
-		public Vector3 Substract(Vector3 v2)
+		public Vector3d Substract(Vector3d v2)
 		{
 			return tA.Vec3Substract(this, v2);
 		}
 
 		[Inline]
-		public Vector3 Multiply(Vector3 v2)
+		public Vector3d Multiply(Vector3d v2)
 		{
 			return tA.Vec3Multiply(this, v2);
 		}
 
 		[Inline]
-		public Vector3 Divide(Vector3 v2)
+		public Vector3d Divide(Vector3d v2)
 		{
 			return tA.Vec3Divide(this, v2);
 		}
 
 		[Inline]
-		public float DotProduct(Vector3 v2)
+		public double DotProduct(Vector3d v2)
 		{
 			return tA.Vec3DotProduct(this, v2);
 		}
 
 		[Inline]
-		public float DotProduct(float v2x, float v2y, float v2z)
+		public double DotProduct(double v2x, double v2y, double v2z)
 		{
 			return tA.Vec3DotProduct(this.x, this.y, this.z, v2x, v2y, v2z);
 		}
 
 		[Inline]
-		public float Length(Vector3 v2)
+		public double Length(Vector3d v2)
 		{
 			return tA.Vec3Length(this);
 		}
 
 		[Inline]
-		public float LengthSquare(Vector3 v2)
+		public double LengthSquare(Vector3d v2)
 		{
 			return tA.Vec3LengthSquare(this);
 		}
 
 		[Inline]
-		public Vector3 CrossProduct(Vector3 v2)
+		public Vector3d CrossProduct(Vector3d v2)
 		{
 			return tA.Vec3CrossProduct(this, v2);
 		}
 
 		[Inline]
-		public float Distance(Vector3 v2)
+		public double Distance(Vector3d v2)
 		{
 			return tA.Vec3Distance(this, v2);
 		}
 
 		[Inline]
-		public Vector3 Normalize(Vector3 v2)
+		public Vector3d Normalize(Vector3d v2)
 		{
 			return tA.Vec3Normalize(this);
 		}
 
 		[Inline]
-		public Vector3 Transform(Mat4 m)
+		public Vector3d Transform(Mat4 m)
 		{
 			return tA.Vec3Transform(this, m);
 		}
 
 		[Inline]
-		public Vector3 Lerp(Vector3 v2, float value)
+		public Vector3d Lerp(Vector3d v2, double value)
 		{
 			return tA.Vec3Lerp(this, v2, value);
 		}
 
-		public static Vector3 Zero()
+		public static Vector3d Zero()
 		{
-			return Vector3(0);
+			return Vector3d(0);
 		}
 
-		public static Vector3 One()
+		public static Vector3d One()
 		{
-			return Vector3(1);
+			return Vector3d(1);
 		}
 	}
 }
